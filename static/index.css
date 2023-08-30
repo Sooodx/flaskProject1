@@ -1,0 +1,75 @@
+select {
+    margin: 20px;
+    height: 25px;
+}
+
+.content {
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.tag_container {
+    padding: 15px;
+    overflow: hidden;
+}
+
+.tag {
+    display: inline;
+    padding: 8px 30px;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #aaa;
+}
+
+.tag-content {
+    display: none;
+    background-color: #fff;
+}
+
+.detect-content {
+    display: flex;
+}
+
+.detect-file {
+    width: 35%;
+    height: 500px;
+    border: 2px solid black;
+    padding: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+button {
+    margin-left: 110px;
+    margin-right: 100px;
+    height: 40px;
+    width: 80px;
+    float: left;
+}
+
+table {
+    margin: 20px auto;
+    width: 80%;
+    border: 2px solid black;
+}
+
+th {
+    height: 50px;
+}
+
+td {
+    height: 100px;
+}
+
+.td2 {
+    height: 700px;
+}

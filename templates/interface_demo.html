@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}" />
+
+</head>
+
+<body>
+
+	<select>
+		<option>选择算法1</option>
+		<option>选择算法2</option>
+		<option>选择算法3</option>
+	</select>
+	<select>
+		<option>选择权重文件1</option>
+		<option>选择权重文件2</option>
+		<option>选择权重文件3</option>
+	</select>
+
+	<div class="content">
+		<div class="tag_container">
+			<div>
+				<div class="tag active">目标检测</div>
+			</div>
+			<div id="tag1" class="tag-content" style="display:block;">
+				<div class="detect-content">
+					<div class="detect-file">
+                        {% if o_img_path %}
+                            {% if suffix == 'jpg'%}
+                                <img src={{ o_img_path }} width="300px"/>
+                            {% else %}
+                                <video src={{ o_img_path }} width="300px" controls></video>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+					<div class="detect-file">
+                        {% if o_img_path %}
+                            {% if suffix == 'jpg'%}
+                                <img src={{ p_img_path }} width="300px"/>
+                            {% else %}
+                                <video src={{ p_img_path }} width="300px" controls></video>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+				</div>
+                <form method="post" enctype="multipart/form-data">
+                    <div>
+                        <input type="file" name="file" value="选择图片">
+                    </div>
+                    <input type="submit" value="提交">
+                </form>
+			</div>
+			<div id="tag2" class="tag-content">
+				<h3>无</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<p class="tittle">
+			检测结果
+		</p>
+		<table cellspacing="2" border="1">
+			<tr>
+				<th>目标类别</th>
+				<th>目标大小</th>
+				<th>置信度</th>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr aria-rowcount="10">
+				<td class="td2" colspan="3"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yolo检测</title>
+</head>
+<body>
+    <h1>上传图片</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <input type="file" name="file" value="选择图片">
+        </div>
+        <input type="submit" value="提交">
+    </form>
+    {% if o_img_path %}
+        {% if suffix == 'jpg'%}
+            <img src={{ o_img_path }} width="300px"/>
+            <img src={{ p_img_path }} width="300px"/>
+        {% else %}
+            <video src={{ o_img_path }} width="300px" controls></video>
+            <video src={{ o_img_path }} width="300px" controls></video>
+        {% endif %}
+        检测结果为：
+        {% for suffix in pred_classes %}
+            {{ class_names[suffix] }}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
