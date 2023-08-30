@@ -32,7 +32,7 @@ def flask_demo():
         o_img_path = basepath + uniqueNum + "_o" + "." + suffix
         f.save(path + o_img_path)  # f.save只能保存绝对路径
         # 处理
-        model = torch.hub.load('D:\yolov5-master', 'custom', 'D:\yolov5-master\yolov5s.pt', source='local')
+        model = torch.hub.load('./yolov5-master', 'custom', './yolov5-master\yolov5s.pt', source='local')
         img_detect_path = '.' + o_img_path  # './static/images/xxx.jpg'
         if suffix == 'jpg':
             img_detect = model(img_detect_path)
@@ -121,7 +121,7 @@ def interface():
         o_img_path = basepath + uniqueNum + "_o" + "." + suffix
         f.save(path + o_img_path)  # f.save只能保存绝对路径
         # 处理
-        model = torch.hub.load('D:\yolov5-master', 'custom', 'D:\yolov5-master\yolov5s.pt', source='local')
+        model = torch.hub.load('./yolov5-master', 'custom', '.\yolov5-master\yolov5s.pt', source='local')
         img_detect_path = '.' + o_img_path  # './static/images/xxx.jpg'
         if suffix == 'jpg':
             img_detect = model(img_detect_path)
